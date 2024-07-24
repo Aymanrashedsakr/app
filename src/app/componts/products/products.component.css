@@ -1,0 +1,39 @@
+.my-pagintion ::ng-deep .ngx-pagination .current
+{
+
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  &:hover {
+   background-color: var(--main-color);
+    color: #fff;
+  }
+  &:active {
+    background-color:var(--main-color);
+    color: #fff;
+    transform: scale(0.98);
+  }
+  &.active {
+    background-color: var(--main-color);
+    color: #fff;
+  }
+  &.disabled {
+    background-color: #cccccc;
+    color: #fff;
+    cursor: not-allowed;
+  }
+ 
+
+
+
+}
+
+/* .my-pagintion ::ng-deep .ngx-pagination .current {
+  background: red;
+} */
+

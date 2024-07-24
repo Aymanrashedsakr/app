@@ -1,0 +1,18 @@
+<div class="container py-5">
+  <div class="row gap-4">
+    <div *ngFor="let catergory of allCategories" class=" category col-sm-6 col-md-4 col-lg-3 col-xl-2 rounded shadow-sm" >
+      <a [routerLink]="['/products/Categories',catergory._id]">
+        <div class=" text-center">
+          <img height="300px" class=" object-fit-cover p-2 w-100" [src]="catergory.image" [alt]="catergory.name" >
+          <p class="py-2 fw-sm text-main"> {{catergory.name}}</p>
+
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+
+<app-loading *ngIf="lodingscreen"></app-loading>
+

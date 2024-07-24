@@ -1,0 +1,11 @@
+
+ @media (max-width: 580px) {
+
+
+.flex-xs-column
+{
+  flex-direction: column;
+  margin-top:2px ;
+
+}
+ }

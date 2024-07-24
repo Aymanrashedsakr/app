@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+
+::-webkit-scrollbar{
+  width: 12px;
+  height: 12px;
+
+}
+::-webkit-scrollbar-track{
+  background: rgb(160, 255, 105);
+}
+::-webkit-scrollbar-thumb{
+  background: var(--main-color);
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+:root
+{
+    --main-color:#0aad0a;
+    --light-color:#f0f3f2;
+    --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+    --font-family:'Encode Sans Expanded', sans-serif;
+    --rating-color:#ffc908;
+}
+
+body{
+    font-family: var(--font-family) !important;
+}
+.rating-color
+{
+    color: var(--rating-color);
+}
+
+.cursor-pointer
+{
+    cursor: pointer;
+}
+a , a:hover{
+    color: black;
+    text-decoration: none;
+
+}
+.product:hover ,.category:hover ,.brand:hover
+{
+    border: solid 1px var(--main-color);
+    box-shadow: 0 10px 15px -3px rgba(16, 203, 79, 0.5),0 10px 15px -2px rgba(40, 229, 68, 0.5)!important;
+    transform: translateY(-.5rem);
+}
+.product .btn
+{
+    transition: transform .7s , opacity .2s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.product:hover .btn
+{
+    opacity: 1;
+    transform: translateY(0%);
+
+}
+.product .fa-heart{
+  transition: transform .7s , opacity .2s;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.product:hover .fa-heart{
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+
+
+.font-sm
+{
+    font-size: 14px;
+}
+.text-main
+{
+    color: var(--main-color);
+}
+.border-main{
+  border: 1px solid var(--main-color);
+}
+.bg-main
+{
+    background-color: var(--main-color) !important;
+}
+.bg-main-light
+{
+    background-color: var(--light-color) !important;
+}
+
+
+
+input.ng-invalid.ng-dirty  {
+  border: solid 1px red;
+  box-shadow: 0 10px 15px -3px red !important;
+
+
+}
+
+input.ng-valid.ng-dirty{
+  border: solid 1px var(--main-color);
+  box-shadow: 0 10px 15px -3px rgba(16, 203, 79, 0.5),0 10px 15px -2px rgba(40, 229, 68, 0.5)!important;
+}
+
+input.form-control:focus{
+  box-shadow: none !important;
+}
+
+
+
+{
+	"plugins": [
+		"@stylelint/plugin-order"
+	],
+	"rules": {
+		"order/order": [
+			"custom-properties",
+			"declarations"
+		],
+		"order/properties-order": [
+			"width",
+			"height"
+		]
+	}
+}

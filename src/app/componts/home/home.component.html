@@ -1,0 +1,20 @@
+
+
+
+
+<!-- <app-loading *ngIf="lodingscreen"></app-loading> -->
+
+<div class="container py-5 min-vh-100">
+  <app-home-main-slider></app-home-main-slider>
+  <app-home-categories-slider></app-home-categories-slider>
+  <input [(ngModel)]="Searchitem"  type="text" class="form-control my-3" placeholder="Search by broduct name ">
+  <div class="row justify-content-center gy-3">
+
+    <h2 class="fw-bold mt-5">popular items this Season </h2>
+    <div *ngFor="let currentproduct of allProduct|search:Searchitem  " class="col-xsm-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 rounded-5">
+      <app-product [product]="currentproduct"></app-product>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,44 @@
+<div class="py-5 ">
+  <section class="login w-75  mx-auto ">
+
+
+
+    <form class="p-5 p-xs-0" (ngSubmit)="handellogin(loginform)" [formGroup]="loginform">
+      <h2 class="text-main fw-bold p-3 p-xsm-0  ">Login Now :</h2>
+    <p *ngIf="ApiErrorMessage" class="alert alert-danger text-center">{{ApiErrorMessage}}</p>
+
+
+
+    <div class="form-floating mb-3">
+      <input formControlName="email" type="email" class="form-control  " id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">email</label>
+    </div>
+      <div *ngIf="loginform.get('email')?.invalid && loginform.get('email')?.touched" class="text-danger">
+        <p *ngIf="loginform.get('email')?.getError('required')" class="my-0 mb-2">email is Reguierd</p >
+        <p *ngIf="loginform.get('email')?.getError('email')" class="my-0 mb-2">please enter a valid email</p >
+      </div>
+
+
+
+      <div class="form-floating mb-3">
+        <input formControlName="password" type="password" class="form-control" id="floatingInput" placeholder="Your Password">
+        <label for="floatingInput">Password</label>
+      </div>
+      <div *ngIf="loginform.get('password')?.invalid && loginform.get('password')?.touched" class="text-danger">
+        <p *ngIf="loginform.get('password')?.getError('required')" class="my-0 mt-4">password is Reguierd</p >
+        <p *ngIf="loginform.get('password')?.getError('pattern')" class="my-0 mt-4">password must start with uppercase followed by at least 5 characters </p>
+      </div>
+
+      <div class="d-flex justify-content-between justify-content-sm-between justify-content-md-between  align-items-center ">
+        <a routerLink="/forgetpassword" class="    fw-bold ">forget Password ? </a>
+        <button [disabled]="loginform.invalid || isLoding" class="mt-2 mt-sm-2 mb-2   btn bg-main text-capitalize text-white">
+          <span *ngIf="!isLoding">login</span>
+          <span *ngIf="isLoding" class="fa-solid fa-spinner fa-spin"></span>
+        </button>
+      </div>
+      <div> <span class="fw-bold">dont have account?</span><button routerLink="/Register" class="btn mx-2 text-white fw-bold bg-main " >register now </button></div>
+    </form>
+
+
+  </section>
+</div>

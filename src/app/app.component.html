@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="container mainsection py-5">
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, .8)"
+  size="large"
+  color="#33ff00f6"
+  type="ball-zig-zag-deflect"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p>
+  </ngx-spinner>
+
+  <button class="btn btn-up  " (click)="gotoUp()" ><i class="fa-solid fa-angle-up"></i></button>

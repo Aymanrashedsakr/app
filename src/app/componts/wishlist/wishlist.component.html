@@ -1,0 +1,45 @@
+
+<app-loading *ngIf="lodingScreen"></app-loading>
+
+  <div      class="container p-5 bg-main-light mt-5 rounded shadow-sm border">
+  <h4 class="fw-bold"> your wishList</h4>
+  <p class="text-main fw-bold font-sm border-bottom pb-4"> total products : {{count}}</p>
+  <div *ngFor="let product of wislistdeatiel" class="row align-items-center p-2 border-bottom pb-4">
+    <div class="col-md-1">
+      <div>
+        <img class="w-100 img-thumbnail" [src]="product?.imageCover" [alt]="product?.title">
+      </div>
+    </div>
+    <div class="col-md-11">
+      <div class="d-flex justify-content-between">
+
+        <div class="item-detalis-left">
+          <p class="fw-bold p-0 m-0">{{product?.title?.split(" ")?.slice(0,2)?.join(" ")}}</p>
+          <p>{{product?.description?.split(" ")?.slice(0,5)?.join(" ")}}</p>
+          <p class="text-main font-sm p-0 m-0  fw-bold"> price :{{product.price}} EGP</p>
+        </div>
+
+        <div class="d-flex item-btns-right align-items-center text-center flex-xs-column ">
+          <button (click)="addtocart(product._id)"  class="btn bg-main text-white fw-bold me-2 flex-grow-1">
+            Add to Cart
+            <i class="fa-solid fa-cart-plus"></i>
+          </button>
+          <button (click)="removefromwishlist(product._id !)"  class="  btn btn-danger  fw-bold flex-grow-1 ">
+            Remove
+            <i class="fa-solid fa-trash mx-2"></i>
+          </button>
+        </div>
+        </div>
+        <div>
+
+        </div>
+      </div>
+
+
+  </div>
+
+</div>
+
+
+
+
